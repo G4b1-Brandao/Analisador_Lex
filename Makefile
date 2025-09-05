@@ -1,5 +1,5 @@
-all: anal.l
+all: analisador.l
 	clear
-	flex -i anal.l
+	flex -i analisador.l
 	gcc lex.yy.c -o out -lfl
 	./out 

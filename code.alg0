@@ -1,25 +1,37 @@
-int x = 1;
-int y = 2;
+/* Este é um comentário de bloco.
+   é bom ele ser ignorado pelo analisador pq eu não aguento mais . */
+
+int x = 21;
+int y = 23;
 int z = x + y;
 
-dec a = 3.14;
-dec b = 2.5;
-dec c = a * b;
+DEC  a = 3.14;
+DEC  b = 2.5;
+DEC  c = a * b;
 
-log ativo = true;
-log concluido = false;
+log meuLogico = true;
+string meuTexto = "Olá, mundo!"; // Este é um comentário de linha.
 
-int resultado = 0;
-
-if (x == y) {
-    resultado = 10;
-} else if (a > b && ativo == true) {
-    resultado = 20;
-} else if (c < 10 || concluido == false) {
-    resultado = 30;
+if (x > 100) {
+    escreva("O número é maior que 100.");
+} else if (x == 100) {
+    escreva("O número é exatamente 100.");
 } else {
-    resultado = 40;
+    leia("Digite um novo número: ");
 }
 
-int contador = 5;
-contador = contador + 1;
+enquanto (x < 130) {
+    x =  x + 1;
+}
+
+for (int i = 0; i < 5; i = i + 1) {
+    // Laço de repetição for
+}
+
+bool verificacao = (c <= 50.0 && meuLogico == true);
+if (verificacao) {
+    escreva("A verificação foi bem-sucedida.");
+}
+
+char meuCaractere = 'A';
+

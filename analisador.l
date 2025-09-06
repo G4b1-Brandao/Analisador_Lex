@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+
 %}
 
 /* DEFINICOES */
@@ -71,16 +72,16 @@ ID_VARIAVEIS      {LETRAS}({LETRAS}|{DIGITOS})*
 "%"               {printf("OPERADOR: RESTO DA DIVISAO | %s\n", yytext);}
 {ATRIBUICAO}      {printf("OPERADOR: ATRIBUICAO | %s\n", yytext);}
 
-    /* letra(h) e (j) DELIMITADORES E CARACTERES ESPECIAIS */
-{DELIMITADOR}     {printf("DELIMITADOR | %s\n", yytext);}
-{FIM_LINHA}       {printf("FIM DE INSTRUCAO | %s\n", yytext);}
-"\"".*?"\""       {printf("STRING | %s\n", yytext);}
-"\'".*?"\'"       {printf("CARACTERE | %s\n", yytext);}
-","               {printf("CARACTERE ESPECIAL: VIRGULA | %s\n", yytext);}
+   /* LETRA (h) e (j) DELIMITADORES E CARACTERES ESPECIAIS */
+{DELIMITADOR}       {printf("DELIMITADOR | %s\n", yytext);}
+{FIM_LINHA}         {printf("FIM DE INSTRUCAO | %s\n", yytext);}
+"\"".*?"\""         {printf("STRING | %.*s\n", (int)yyleng - 2, yytext + 1);}
+"\'"."\'"           {printf("CARACTERE | %.*s\n", (int)yyleng - 2, yytext + 1);}
+","                 {printf("CARACTERE ESPECIAL: VIRGULA | %s\n", yytext);}
 
     /* letra (a) COMENTARIOS */
 "//".* {}
-"/*"[^*]*"*"*([^*/][^*]*"*"*)*"/" {}
+"/*"[^*]*"*"*([^*/][^*]*"*"*)*"/" {} {printf("COMENTARIO | %s\n", yytext);}
 
     /* RECONHECIMENTO GERAL */
 {DIGITOS}("."[0-9]+)? {printf("LITERAL: NUMERICO | %s\n", yytext);}
@@ -102,3 +103,4 @@ int main(){
     fclose(yyin);
     return 0;
 }
+

@@ -1,13 +1,16 @@
 /* Este é um comentário de bloco.
    é bom ele ser ignorado pelo analisador pq eu não aguento mais . */
 
-int x = 21;
+int x = 100;
 int y = 23;
 int z = x + y;
 
 DEC  a = 3.14;
 DEC  b = 2.5;
 DEC  c = a * b;
+
+escreva ("Ola Mundo")
+leia(Id)
 
 log meuLogico = true;
 string meuTexto = "Olá, mundo!"; // Este é um comentário de linha.

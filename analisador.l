@@ -66,6 +66,7 @@ ID_VARIAVEIS      {LETRAS}({LETRAS}|{DIGITOS})*
 "||"              {printf("OPERADOR LOGICO: OR | %s\n", yytext);}
 "!"               {printf("OPERADOR LOGICO: NOT | %s\n", yytext);}
 "+"               {printf("OPERADOR: SOMA | %s\n", yytext);}
+"++"               {printf("OPERADOR: INCREMENTADOR| %s\n", yytext);}
 "-"               {printf("OPERADOR: SUBTRACAO | %s\n", yytext);}
 "*"               {printf("OPERADOR: MULTIPLICACAO | %s\n", yytext);}
 "/"               {printf("OPERADOR: DIVISAO | %s\n", yytext);}
@@ -81,7 +82,7 @@ ID_VARIAVEIS      {LETRAS}({LETRAS}|{DIGITOS})*
 
     /* letra (a) COMENTARIOS */
 "//".* {}
-"/*"[^*]*"*"*([^*/][^*]*"*"*)*"/" {} {printf("COMENTARIO | %s\n", yytext);}
+"/*"[^*]*"*"*([^*/][^*]*"*"*)*"/" {} {printf("COMENTARIO | %s\n", yytext);} 
 
     /* RECONHECIMENTO GERAL */
 {DIGITOS}("."[0-9]+)? {printf("LITERAL: NUMERICO | %s\n", yytext);}
@@ -94,7 +95,7 @@ ID_VARIAVEIS      {LETRAS}({LETRAS}|{DIGITOS})*
 
 
 int main(){
-    yyin = fopen("code.alg0", "r");
+    yyin = fopen("code.gabs", "r");
     if(!yyin) {
         printf("ERRO: Nao foi possivel abrir o arquivo 'code.alg0'\n");
         return 1;

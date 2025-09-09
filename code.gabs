@@ -9,8 +9,8 @@ DEC  a = 3.14;
 DEC  b = 2.5;
 DEC  c = a * b;
 
-escreva ("Ola Mundo")
-leia(Id)
+escreva ("Ola Mundo");
+
 
 log meuLogico = true;
 string meuTexto = "Olá, mundo!"; // Este é um comentário de linha.
@@ -27,7 +27,7 @@ enquanto (x < 130) {
     x =  x + 1;
 }
 
-for (int i = 0; i < 5; i = i + 1) {
+for (int i = 0; i < 5; i = i ++) {
     // Laço de repetição for
 }
 
@@ -38,3 +38,10 @@ if (verificacao) {
 
 char meuCaractere = 'A';
 
+
+if (10 > 0) {
+    escreva("Contando de 1 até 10");
+   for (int i = 1; i <= 10; i++) {
+        escreva("1,2,3,4,5,6,7,8,9,10");
+        }
+}

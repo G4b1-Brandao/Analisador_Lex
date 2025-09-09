@@ -97,7 +97,7 @@ ID_VARIAVEIS      {LETRAS}({LETRAS}|{DIGITOS})*
 int main(){
     yyin = fopen("code.gabs", "r");
     if(!yyin) {
-        printf("ERRO: Nao foi possivel abrir o arquivo 'code.alg0'\n");
+        printf("ERRO: Nao foi possivel abrir o arquivo 'code.gabs'\n");
         return 1;
     }
     yylex();
